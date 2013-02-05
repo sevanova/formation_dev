@@ -4,6 +4,7 @@ namespace Sevanova\IntranotBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sevanova\IntranotBundle\Entity\Fiche;
+use Sevanova\IntranotBundle\Entity\Document;
     
 class DefaultController extends Controller
 {
@@ -15,8 +16,15 @@ class DefaultController extends Controller
 	    $fiche->setTitre('Titre');
 	    $fiche->setTexte('Texte');
 	    
+        $document = new Document();
+        $document->setTitre('TitreDocument');
+        $document->setType('PDF');
+        
 	    $em = $this->getDoctrine()->getManager();
 	    $em->persist($fiche);
+        $document->addFiche = $fiche;
+        $em->persist($document);
+        
 	    $em->flush();
 	    return $this->render('SevanovaIntranotBundle:Default:index.html.twig', array('prenoms' => $prenoms));
     }
