@@ -1,0 +1,3 @@
+{% extends '::base.html.twig' %}
+{% block title %}{{parent()}} | Page du Bouquetin {% endblock %}
+{% block body %}{{ '5500.25155'|price(1, ',', '') }}{% endblock %}

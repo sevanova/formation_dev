@@ -1,0 +1,6 @@
+sevanova_intranot_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SevanovaIntranotBundle:Default:index }
+sevanova_intranot_show:
+    pattern:  /show/
+    defaults: { _controller: SevanovaIntranotBundle:Default:show }

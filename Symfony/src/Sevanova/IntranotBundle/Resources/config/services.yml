@@ -1,0 +1,14 @@
+parameters:
+#    sevanova_intranot.example.class: Sevanova\IntranotBundle\Example
+
+services:
+#    sevanova_intranot.example:
+#        class: %sevanova_intranot.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+# src/Acme/DemoBundle/Resources/config/services.yml
+services:
+    sevanova_intranot.twig.sevanova_extension:
+        class: Sevanova\IntranotBundle\Twig\IntranotBundleExtension
+        tags:
+            - { name: twig.extension }
